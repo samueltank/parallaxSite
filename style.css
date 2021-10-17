@@ -5,6 +5,7 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   background: linear-gradient(#2b1055, #7597de);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 header {
@@ -53,6 +55,7 @@ header ul li a {
   padding: 6px 15px;
   color: white;
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 header ul li a:hover, header ul li a.active {
@@ -68,6 +71,17 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #1c0522, transparent);
+  z-index: 100000;
 }
 
 section img {
@@ -94,6 +108,7 @@ section img#mountains_front {
   white-space: nowrap;
   font-size: 7.5vw;
   z-index: 9;
+  right: -350px;
 }
 
 #btn {
@@ -111,5 +126,16 @@ section img#mountains_front {
 .sec {
   position: relative;
   padding: 100px;
+  background: #1c0522;
+}
 
+.sec h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.sec p {
+  font-size: 1em;
+  color: white;
 }
